@@ -17,9 +17,9 @@ cacheDirectories:
   - .m2
 
 env:
-  - MyKey1: ${{.secrets.supersecret}}
-  - MyKey2: ${{.secrets.supersecret2}}
-  - MyKey3: ${{.secrets.supersecret3}}
+  MyKey1: ${{.secrets.supersecret}}
+  MyKey2: ${{.secrets.supersecret2}}
+  MyKey3: ${{.secrets.supersecret3}}
 
 pre:
   - printenv
