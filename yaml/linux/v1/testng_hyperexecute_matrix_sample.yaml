@@ -16,7 +16,13 @@ cacheKey: '{{ checksum "pom.xml" }}'
 cacheDirectories:
   - .m2
 
+env:
+  - MyKey1: ${{.secrets.supersecret}}
+  - MyKey2: ${{.secrets.supersecret2}}
+  - MyKey3: ${{.secrets.supersecret3}}
+
 pre:
+  - printenv
   - mvn -Dmaven.repo.local=./.m2 dependency:resolve
 
 testSuites:
